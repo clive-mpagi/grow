@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - My Portfolio</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVIGATION */
+    header {
+      background: #111;
+      color: white;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      display: block;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+    .nav-links li a:hover {
+      color: orange;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+      transition: 0.4s;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; right: 0;
+        width: 200px;
+        background: #111;
+        padding: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
+      height: 80vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      margin-top: 60px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* SERVICES GRID */
+    .services {
+      padding: 4rem 2rem;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    .service-card h3 {
+      margin-bottom: 1rem;
+      color: #ff5722;
+    }
+
+    /* WHY CHOOSE ME */
+    .why-choose {
+      padding: 4rem 2rem;
+      background: #fff3e0;
+      text-align: center;
+    }
+    .why-choose h2 {
+      margin-bottom: 2rem;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .why-item {
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .why-item h3 {
+      margin-bottom: 1rem;
+      color: #e65100;
+    }
+
+    
+
+    /* CTA */
+    .cta {
+      background: #ff5722;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .cta h2 {
+      margin-bottom: 1rem;
+    }
+    .cta a {
+      background: white;
+      color: #ff5722;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: orange;
+    }
+    .socials {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <nav>
+      <div style="display:flex; align-items:center; gap:8px;">
+      <img src="image/logo.png" alt="Your Website Logo" style="height:60px; width:auto;" />
+      <span style="font-size:14px; font-style:italic; color:#e9dfdf;">We design in style</span>
+    </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>My Services</h1>
+    <p>What I can do for you as a professional Web Designer</p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services">
+    <h2>What I Offer</h2>
+    <div class="service-grid">
+      <div class="service-card"><h3>Web Design</h3><p>Beautiful, functional, and creative designs tailored for your brand.</p></div>
+      <div class="service-card"><h3>Responsive Websites</h3><p>Optimized for all devices: desktop, tablet, and mobile.</p></div>
+      <div class="service-card"><h3>UI/UX Design</h3><p>Enhancing user experience with intuitive interfaces.</p></div>
+      <div class="service-card"><h3>Portfolio Websites</h3><p>Showcasing your work with elegant and modern layouts.</p></div>
+      <div class="service-card"><h3>Business Websites</h3><p>Professional sites to grow and represent your business online.</p></div>
+      <div class="service-card"><h3>Landing Pages</h3><p>High-converting pages for promotions and campaigns.</p></div>
+    </div>
+  </section>
+  <b>
+    <b>
+
+  <section style="
+  background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') 
+              no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+">
+  <!-- Overlay for readability -->
+  <div style="
+    background: rgba(0,0,0,0.6);
+    padding: 50px;
+    border-radius: 12px;
+    display: inline-block;
+  ">
+    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">The Life of Coding</h1>
+    <p style="font-size: 1.2rem; max-width: 650px; margin: auto;">
+      Coding is more than just writing lines of text it's hours on the computer, learning, exploring, and solving problems. 
+      Every day is a new opportunity to discover something amazing in the world of technology.
+    </p>
+  </div>
+</section>
+
+<section style="background:#f5f7fa; padding:60px 20px;">
+  <div style="max-width:1200px; margin:auto; display:flex; gap:30px;">
+    
+    <!-- Main Article -->
+    <div style="flex:3; background:#ffffff; padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+      <h2 style="font-size:2rem; color:#2e7d32; margin-bottom:15px;">The Power of Good Web Design</h2>
+      <p style="color:#444; font-size:1.1rem; line-height:1.7;">
+        A well-designed website isn't just about colors and layout it's about creating a meaningful 
+        experience for users. Through simplicity, clarity, and creativity, web design can transform 
+        businesses and open doors to new opportunities. Every click, every scroll, and every element 
+        tells a story about your brand.
+      </p>
+    </div>
+    
+    <!-- Sidebar -->
+    <aside style="flex:1; background:linear-gradient(135deg, #81c784, #388e3c); color:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+      <h3 style="font-size:1.5rem; margin-bottom:15px;">💡 Quick Insight</h3>
+      <p style="font-size:1rem; line-height:1.6;">
+        Great design is not what looks good, it's what works well.  
+        The right design makes your business memorable across the globe.  
+      </p>
+    </aside>
+    
+  </div>
+</section>
+
+
+
+    <!-- WHY CHOOSE ME -->
+  <section class="why-choose">
+    <div class="why-container">
+      <!-- Text on Left -->
+      <div class="why-text">
+        <h2>Why Choose Me?</h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <h3>Creative</h3>
+            <p>I bring fresh and unique ideas to make your website stand out.</p>
+          </div>
+          <div class="why-item">
+            <h3>Reliable</h3>
+            <p>Timely delivery and clear communication are my priorities.</p>
+          </div>
+          <div class="why-item">
+            <h3>Passionate</h3>
+            <p>Designing websites is not just work for me, it's my passion.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image on Right -->
+      <div class="why-image" aria-hidden="false">
+          <!-- Replace 'your-photo.jpg' with your actual photo file (avoid huge files) -->
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Clive Mpagi - Web Designer">
+        </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Let's bring your vision to life.</h2>
+    <a href="contact.html">Contact Me</a>
+  </section>
+
+  <section style="
+  background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') 
+              no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+">
+  <!-- Overlay -->
+  <div style="
+    background: rgba(0,0,0,0.65);
+    padding: 60px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: auto;
+  ">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">
+      Why Work With Me
+    </h2>
+    <p style="font-size: 1.2rem; line-height: 1.8;">
+      If you work with me, your project will be delivered with high speed so you can start 
+      growing right away. I will also share knowledge from my experience to ensure your 
+      business, company, or organization becomes well known in every possible way. 
+      Together, we plan, discuss, and create strategies that guarantee success.
+    </p>
+  </div>
+</section>
+
+<section style="
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 80px 20px;
+">
+  <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 40px;
+  ">
+
+    <!-- Text Section -->
+    <div style="
+      flex: 1; 
+      min-width: 280px; 
+      background: #90caf9; 
+      padding: 40px; 
+      border-radius: 12px;
+      color: #0d47a1;
+    ">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color:#08306b;">
+        Contact Me Today
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.7;">
+        If you reach out today, your action will begin right away.  
+        I believe in fast response, clear communication, and putting  
+        your goals into motion without delay. Together, we can start  
+        shaping the success of your business, company, or organization now.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div style="
+      flex: 1; 
+      min-width: 280px; 
+      background: #64b5f6; 
+      padding: 40px; 
+      border-radius: 12px;
+      text-align: center;
+    ">
+      <img src="image/clive7.jpg" alt="Your Profile" style="
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      ">
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Clive | Web Designer</p>
+    <div class="socials">
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

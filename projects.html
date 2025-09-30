@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clive | Projects</title>
+  <style>
+    /* Basic Reset */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+    body, html{scroll-behavior:smooth}
+
+    /* NAVIGATION */
+    header{position:fixed;top:0;left:0;width:100%;background:#111;color:white;z-index:1000;}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;}
+    .logo{font-weight:bold;font-size:1.2rem;}
+    .logo span{display:block;font-weight:400;font-size:0.8rem;}
+    .nav-links{list-style:none;display:flex;gap:1.2rem;}
+    .nav-links li a{text-decoration:none;color:white;transition:.3s;}
+    .nav-links li a:hover{color:orange;}
+    .hamburger{display:none;flex-direction:column;cursor:pointer;}
+    .hamburger div{width:25px;height:3px;background:white;margin:4px;transition:.4s;}
+    @media(max-width:768px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:60px;right:0;width:200px;background:#111;padding:1rem;}
+      .nav-links.active{display:flex;}
+      .hamburger{display:flex;}
+    }
+
+    main{padding-top:70px;}
+
+   /* HERO */
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images.pexels.com/photos/7988747/pexels-photo-7988747.jpeg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+
+
+    /* PROJECT GRID */
+    .projects{padding:4rem 2rem;background:#f9f9f9;max-width:1200px;margin:0 auto;}
+    .projects h2{text-align:center;font-size:2rem;margin-bottom:2rem;}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+    .project-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:transform .3s;}
+    .project-card img{width:100%;height:200px;object-fit:cover;}
+    .project-card h3{margin:1rem 0 .5rem 0;color:#ff5722;padding:0 1rem;}
+    .project-card p{padding:0 1rem 1rem 1rem;color:#333;line-height:1.4;font-size:0.95rem;}
+    .project-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 10px 20px rgba(0,0,0,0.15);}
+
+    /* CTA */
+    .cta{background:#ff5722;color:white;text-align:center;padding:3rem 2rem;margin:3rem auto;border-radius:12px;max-width:1000px;}
+    .cta h2{margin-bottom:1rem;}
+    .cta a{background:white;color:#ff5722;padding:.8rem 1.5rem;border-radius:6px;text-decoration:none;font-weight:bold;transition:.3s;}
+    .cta a:hover{background:#ffe6db;}
+
+    /* FOOTER */
+    footer{background:#222;color:white;padding:2rem;text-align:center;}
+    footer .footer-links{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1rem;}
+    footer a{color:white;text-decoration:none;transition:.3s;}
+    footer a:hover{color:orange;}
+
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <nav>
+       <div style="display:flex; align-items:center; gap:8px;">
+      <img src="image/logo.png" alt="Your Website Logo" style="height:60px; width:auto;" />
+      <span style="font-size:14px; font-style:italic; color:#e9dfdf;">We design in style</span>
+    </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active-link" href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+<section class="hero">
+  <h1>My Projects</h1>
+  <p>A showcase of my work and creations</p>
+</section>
+
+    </section>
+
+    <!-- PROJECT GRID -->
+    <section class="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="400x200.png?text=Project+1https:/" alt="Project 1">/via.placeholder.com/
+          <h3>Project One</h3>
+          <p>Clean, modern design focused on usability and aesthetics.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://sites.google.com/view/ucandev/home" alt="Project 2">
+          <h3>Project Two</h3>
+          <p>Responsive website that works perfectly across all devices.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://sites.google.com/view/havenchocolate/home" alt="Project 3">
+          <h3>Project Three</h3>
+          <p>UI/UX focused project ensuring smooth user interaction.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+4" alt="Project 4">
+          <h3>Project Four</h3>
+          <p>Landing page design aimed to convert visitors into clients.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+5" alt="Project 5">
+          <h3>Project Five</h3>
+          <p>Portfolio website highlighting work with clean layout.</p>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x200.png?text=Project+6" alt="Project 6">
+          <h3>Project Six</h3>
+          <p>Professional business website to enhance online presence.</p>
+        </div>
+      </div>
+    </section>
+
+   <section style="
+  background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') 
+              no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- Overlay -->
+  <div style="
+    background: rgba(0,0,0,0.6);
+    padding: 60px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: auto;
+  ">
+    <h2 class="slide-left" style="font-size: 2.5rem; margin-bottom: 20px;">
+      What I Create, Impacts Nations
+    </h2>
+    <p class="slide-right" style="font-size: 1.2rem; line-height: 1.8;">
+      Every project I build is more than just code it's about empowering people, 
+      connecting businesses, and driving growth. Through creativity and technology, 
+      I aim to make a lasting difference in communities and nations across the globe.
+    </p>
+  </div>
+</section>
+
+<style>
+/* Animation Keyframes */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Apply animations */
+.slide-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+.slide-right {
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+</style>
+
+
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Have an idea? Let’s build it together!</h2>
+      <a href="contact.html">Contact Me</a>
+    </section>
+
+    <section style="
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  padding: 80px 20px;
+">
+  <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 40px;
+  ">
+
+    <!-- Text Section -->
+    <div style="
+      flex: 1; 
+      min-width: 280px; 
+      background: #a5d6a7; 
+      padding: 40px; 
+      border-radius: 12px;
+      color: #1b5e20;
+    ">
+      <h2 style="font-size: 2rem; margin-bottom: 20px; color:#0b3d0b;">
+        The Person Behind the Code
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.7;">
+        Every project I work on carries a piece of my passion for technology and growth.  
+        I believe building websites is not only about coding — it’s about creating  
+        solutions that help people, businesses, and communities move forward.  
+        When you work with me, you’re not just hiring a developer — you’re partnering  
+        with someone who truly cares about your success.
+      </p>
+    </div>
+
+    <!-- Image Section -->
+    <div style="
+      flex: 1; 
+      min-width: 280px; 
+      background: #81c784; 
+      padding: 40px; 
+      border-radius: 12px;
+      text-align: center;
+    ">
+      <img src="image/clive7.jpg" alt="Your Profile" style="
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      ">
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p>&copy; 2025 Clive | Web Designer</p>
+    <div>
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger toggle
+    function toggleMenu(){
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
